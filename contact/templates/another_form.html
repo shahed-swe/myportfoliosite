@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block head_title %} {{title}} {% endblock %}
+{% block content %} 
+    <!-- <h1>Contact US</h1> -->
+    
+    <section class="ftco-section contact-section ftco-no-pb" id="contact-section">  
+        <div class="container">
+            <div class="row justify-content-center mb-5 pb-3">
+                <div class="col col-lg-6">
+                <div class="col-md-7 heading-section text-center ftco-animate">
+                    <h2 class="mb-4" style="margin-left:130px">Contact Me</h2>
+                </div>
+                <form method='POST' action='.'> {% csrf_token %}
+                    <label for="full_name">Name</label>
+                    <input type="text" class="form-control" id="full_name" placeholder="Ex. Shahed Talukder" name="full_name">
+                    <label for="email">Email:</label>
+                    <input type="email" class="form-control" id="email" placeholder="shahedtalukder51@gmail.com" name="email">
+                    <br>
+                    <label for="content">Question</label>
+                    <input type="content" class="form-control" id="content" placeholder="Ask Me any question?" name="content">
+                    <br>
+                        <!-- {{form.as_p}} -->
+                    <button class="btn btn-primary py-3 px-5" type="submit">Send</button>
+                </form>
+                <div class="col-md-6 d-flex">
+                <div class="img" style="background-image: url(/static/images/about.jpg);"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

@@ -1,0 +1,17 @@
+  <div class="col-md-4 d-flex ftco-animate">
+    <div class="blog-entry justify-content-end">
+      <a href="{{object.get_absolute_url}}" class="block-20" style="background-image: url('/static/images/image_1.jpg');">
+      </a>
+      <div class="text mt-3 float-right d-block">
+        <div class="d-flex align-items-center mb-3 meta">
+          <p class="mb-0">
+            <span class="mr-2">{{object.date}}</span>
+            <a href="{{object.get_absolute_url}}" class="mr-2">{{object.time}}</a>
+            <a href="{{object.get_absolute_url}}" class="meta-chat"><span class="icon-chat"></span> 3</a>
+          </p>
+        </div>
+        <h3 class="heading"><a href="{{object.get_absolute_url}}">{{object.title}}</a></h3>
+        <p class="card-text">{{object.content|slice:":30" }}</p>
+      </div>
+    </div>
+  </div>

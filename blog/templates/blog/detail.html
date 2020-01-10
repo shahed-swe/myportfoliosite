@@ -1,0 +1,25 @@
+{% extends "base.html"%}
+
+{% block content %}
+<section class="ftco-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 ftco-animate fadeInUp ftco-animated">
+        <h2 class="mb-3">{{object.title}}</h2>
+          <img src="/static/images/image_3.jpg" alt="" class="img-fluid">
+        <p>{{object.content}}</p>
+        <h2 class="mb-3 mt-5">{{object.time}} {{object.date}}</h2>
+        <p>{{object.content}}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+    {% if request.user.is_authenticated %}
+        {% if request.user.is_staff %}
+            <a href='{{object.get_edit_url}}'>Edit</a>
+            <a href='{{object.get_delete_url}}'>Delete</a>
+        {% endif %}
+    {% endif %}
+
+{% endblock %}
